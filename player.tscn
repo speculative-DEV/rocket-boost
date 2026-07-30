@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c3gel4vrab8g3" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="AudioStream" uid="uid://dbv731rvo0t6t" path="res://Audio/SFX - Death Explosion.ogg" id="2_onrkg"]
 [ext_resource type="AudioStream" uid="uid://dhh6rp56lb7ta" path="res://Audio/SFX - Success.ogg" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://nx1pkn85b8rk" path="res://Audio/SFX - Main engine thrust.ogg" id="4_hqtel"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_r030d"]
 
@@ -30,5 +31,8 @@ stream = ExtResource("2_onrkg")
 
 [node name="SuccessAudio" type="AudioStreamPlayer" parent="." unique_id=395374081]
 stream = ExtResource("3_i3pqv")
+
+[node name="RocketAudio" type="AudioStreamPlayer3D" parent="." unique_id=1323802987]
+stream = ExtResource("4_hqtel")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
