@@ -3,6 +3,20 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r030d"]
 albedo_color = Color(0.4, 0.27058825, 0.1764706, 1)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gy1a1"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_o6mkr"]
+sky_material = SubResource("ProceduralSkyMaterial_gy1a1")
+
+[sub_resource type="Environment" id="Environment_l3thc"]
+background_mode = 1
+background_color = Color(0.07, 0.044963334, 0.029400002, 1)
+sky = SubResource("Sky_o6mkr")
+ambient_light_source = 3
+glow_enabled = true
+
 [node name="Floor" type="CSGBox3D" unique_id=1367139585 groups=["Hazard"]]
 use_collision = true
 size = Vector3(30, 8, 5)
@@ -82,3 +96,26 @@ material = SubResource("StandardMaterial3D_r030d")
 transform = Transform3D(-0.39986956, 0.27500486, -0.8743435, 0.5666611, 0.82395107, 4.9912074e-09, 0.7204163, -0.4954565, -0.4853075, -6.022804, 15.391899, -12.445828)
 size = Vector3(3, 10, 3)
 material = SubResource("StandardMaterial3D_r030d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=569265001]
+transform = Transform3D(0.98325485, -0.11713873, 0.13960052, 0, 0.76604444, 0.6427876, -0.18223551, -0.63202405, 0.753217, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=766634603]
+environment = SubResource("Environment_l3thc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=720391639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64256287, 9.295581, -1.3012066)
+omni_range = 12.0
+omni_attenuation = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1706023695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7358904, 9.295581, -1.3012066)
+omni_range = 12.0
+omni_attenuation = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=605602367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.29617, 9.295581, -1.3012066)
+omni_range = 12.0
+omni_attenuation = 0.5
