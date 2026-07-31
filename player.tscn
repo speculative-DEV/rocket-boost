@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ux6ivcx1ovdp" path="res://Particles/booster_particles.tscn" id="5_sweqy"]
 [ext_resource type="PackedScene" uid="uid://dcecb8hw7dbrv" path="res://Particles/explosion_particles.tscn" id="6_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://jfwajmrh6ca7" path="res://Particles/success_particles.tscn" id="7_1jxqw"]
+[ext_resource type="Material" uid="uid://b4jj2vtw7h1um" path="res://ShipRedMaterial.tres" id="8_dw050"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_r030d"]
 
@@ -86,10 +87,12 @@ transform = Transform3D(0.97731483, 0.21179165, 0, -0.21179165, 0.97731483, 0, 0
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=291891380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25018203, 0)
+material_override = ExtResource("8_dw050")
 mesh = SubResource("CylinderMesh_1jxqw")
 
 [node name="Cockpit" type="MeshInstance3D" parent="Body" unique_id=2032704781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.000182, 0)
+material_override = ExtResource("8_dw050")
 mesh = SubResource("CylinderMesh_c2fln")
 
 [node name="Midriff" type="MeshInstance3D" parent="Body" unique_id=107469913]
